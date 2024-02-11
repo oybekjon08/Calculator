@@ -26,13 +26,8 @@ input.setGeometry(10, 25,360,90)
 oyna.setWindowTitle("Calculator")
 oyna.move(1200,200)
 oyna.setFixedSize(460,590)
-color="black"
 nolga=QLabel("nolga bolmidi", oyna)
-nolga.setGeometry(30, 0, 200, 200)
-nolga.setStyleSheet(f"""
-    color: {color};
-    font-size: 30px
-""")
+
 
 
 def birBosildi():
@@ -123,6 +118,9 @@ def tengla():
             natija=str(eval(txt))
         except ZeroDivisionError:
             input.setText("nolga bolinmaydi")
+            tozala()
+        except Exception:
+            input.setText("Biron belgi qolib ketdi")
         else:
             input.setText(natija)        
     
